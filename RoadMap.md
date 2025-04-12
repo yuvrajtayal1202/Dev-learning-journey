@@ -60,8 +60,8 @@ Check my [dev-learning-journey](https://github.com/YuvrajTayal/dev-learning-jour
 ## 🔗 Connect with Me
 
 - 🐦 Twitter: [@YuvrajTayal](https://x.com/YuvrajTayal)
-- 💼 LinkedIn: [Yuvraj Tayal](https://www.linkedin.com/in/YuvrajTayal)
-- 📓 GitHub Log: [dev-learning-journey](https://github.com/YuvrajTayal/dev-learning-journey)
+- 💼 LinkedIn: [Yuvraj Tayal](https://www.linkedin.com/in/yuvraj-tayal-7a3a48356/)
+- 📓 GitHub Log: [dev-learning-journey](https://github.com/YuvrajTayal/dev-learning-journey/)
 
 ---
 
