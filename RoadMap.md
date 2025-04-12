@@ -33,7 +33,7 @@
 
 ## 📚 Active Learning Logs
 
-Check my [dev-learning-journey](https://github.com/YuvrajTayal/dev-learning-journey) repo for:
+Check my [dev-learning-journey](https://github.com/YuvrajTayal1202/dev-learning-journey) repo for:
 - 🧠 Daily Learning Logs
 - 🔨 Projects
 - 📈 Growth and reflections
@@ -60,8 +60,8 @@ Check my [dev-learning-journey](https://github.com/YuvrajTayal/dev-learning-jour
 ## 🔗 Connect with Me
 
 - 🐦 Twitter: [@YuvrajTayal](https://x.com/YuvrajTayal)
-- 💼 LinkedIn: [Yuvraj Tayal](https://www.linkedin.com/in/yuvraj-tayal-7a3a48356/)
-- 📓 GitHub Log: [dev-learning-journey](https://github.com/YuvrajTayal/dev-learning-journey/)
+- 💼 LinkedIn: [Yuvraj Tayal](https://www.linkedin.com/in/yuvraj-tayal-7a3a48356)
+- 📓 GitHub Log: [dev-learning-journey](https://github.com/YuvrajTayal1202/dev-learning-journey/)
 
 ---
 
