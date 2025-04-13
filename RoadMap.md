@@ -19,7 +19,7 @@
 | 25–27       | Master System Design                                 |
 | 28–30       | Apply for high-paying jobs (remote/international)    |
 | 31–33       | Mock Interviews + Portfolio Polish                   |
-| 34–36       | Finalize ₹1 Cr Package Offer                         |
+| 34–36       | Finalize                         |
 
 ---
 
