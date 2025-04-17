@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        background: linear-gradient(#000000, brown);
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .music-player {
+        background: linear-gradient(0deg, pink, rgb(253, 60, 92));
+        width: 450px;
+        min-height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+      .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 400px;
+      }
+      .nav img {
+        width: 15px;
+      }
+      .img {
+        border-radius: 50%;
+        background-color: white;
+        width: 40px;
+        height: 40px;
+        /* padding: 20px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .img:hover {
+        background-color: #f0f0f0;
+        cursor: pointer;
+      }
+
+      .thumbnail {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+        /* background-color: #000000; */
+      }
+      .thumbnail img {
+        border-radius: 50%;
+        border: 8px solid white;
+        width: 250px;
+        /* margin: 10px 0 ; */
+      }
+      .thumbnail h2 {
+        margin: 25px 0 7px 0;
+        font-weight: 100;
+      }
+
+      .control {
+        display: flex;
+        flex-direction: column;
+        /* width: ; */
+      }
+
+#progres{
+    -webkit-appearance: none;
+    background: #f53192;
+    width: 100%;
+    height: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 40px 0;
+}
+#progres::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background: #f53192;
+    width: 30px;
+   border-radius: 50%;
+   border: 8px solid #ffffff;
+   box-shadow: 0 5px 5px rgba(255, 26, 26, 0.22);
+    height: 30px;
+
+}
+
+      .contr {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contr div {
+        border-radius: 50%;
+        background-color: white;
+        width: 60px;
+        height: 60px;
+        margin: 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #f53192;
+        box-shadow: 0 10px 20px rgba(255, 26, 26, 0.22);
+        cursor: pointer;
+      }
+
+      .contr div:nth-child(2){
+        transform: scale(1.5);
+        background: #f53192;
+        color: white;
+      }
+      .contr div img{
+        width: 18px;
+
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="music-player">
+      <div class="nav">
+        <div class="img">
+          <img src="angle-left.png" alt="" />
+        </div>
+        <div class="img">
+          <img src="hamburger.png" alt="" />
+        </div>
+      </div>
+
+      <div class="thumbnail">
+        <img src="468-thumbnail.png" alt="" />
+        <h2>Despacito</h2>
+        <p>Luis Fonsi Ft. Puerto Rican</p>
+      </div>
+
+      <div class="control" >
+        <audio src="song.mp3"  id="song"></audio>
+        <input type="range" value="0" id="progres"/>
+        <div class="contr">
+          <div  >
+            <img src="backward.png" alt="" />
+          </div>
+          <div onclick="playPause()">
+            <img src="play-button-arrowhead.png" alt="" id="ctrl" />
+          </div>
+          <div>
+            <img src="forward.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+<script>
+
+let progres = document.querySelector("#progres")
+let ctrl = document.querySelector("#ctrl")
+let song = document.querySelector("#song")
+
+ song.onloadedmatadata = function(){
+    progres.max = song.duration;
+    progres.value = song.currentTime;
+ }
+
+function playPause(){
+    if(ctrl.src.includes("pause.png")){
+        song.pause()
+        ctrl.src = "play-button-arrowhead.png";
+    }
+    else{
+        ctrl.src = "pause.png";
+        song.play()
+    }
+}
+
+if(song.play()){
+    setInterval(function(){
+     progres.value = song.currentTime;
+    }, 500);
+}
+
+progres.onchange = function(){
+song.play();
+song.currentTime = progres.value;
+ctrl.src = "pause.png";
+}
+
+</script>
+
+
+
+
+  </body>
+</html>

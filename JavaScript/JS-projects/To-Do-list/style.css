@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg , rgb(1, 90, 207), rgb(0, 0, 0));
+    height: 83.565vh;
+}
+.card{
+    margin: 150px auto;
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    border-radius: 10px;
+    width: 80%;
+    max-width: 450px;
+    min-height: 200px;
+   }
+   
+.heading{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    margin-top: 40px;
+}
+
+
+.heading img{
+    width: 20px;
+    margin: 0 5px;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 10px 0;
+}
+
+.search input{
+    width: 70%;
+    height:45px;
+    border-radius: 80px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border: none;
+    outline: none;
+    background-color: rgb(232, 233, 233);
+    padding: 10px;
+    
+}
+
+.search button{
+    border: none;
+    outline: none;
+background-color: rgb(226, 147, 1);
+    color: white;
+    
+    width: 20%;
+    height: 45px;
+    font-size: 18px;
+    border-radius: 80px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.search button:hover{
+    cursor: pointer;
+    background-color: rgb(255, 166, 1);
+}
+
+.task-con {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+.task-con li{
+    list-style: none;
+    /* text-decoration: none; */
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.task-con li::before{
+    content: '';
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center; 
+    top: -4px;
+    background-image: url('images/unchecked.png');
+    left: -34px;
+}
+.closed{
+    color: #858585;
+    text-decoration: line-through;
+}
+.task-con li.closed:before {
+    content: '';
+    background-image: url('images/checked.png');
+
+    }
+
+.task-con li span{
+    margin-right: 50px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding-top: 2px;
+    border-radius: 50%;
+}
+.task-con li span:hover{
+    background-color: rgb(235, 235, 235);
+    /* padding: 10px; */
+}

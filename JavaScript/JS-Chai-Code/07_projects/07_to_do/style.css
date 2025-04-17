@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body{
+    background-color: rgb(60 32 108);
+}
+
+.card{
+ margin: 150px auto;
+ width: 80%;
+ max-width: 450px;
+ background-color: azure;
+ display: flex;
+ flex-direction: column;
+ /* justify-content: center; */
+ border-radius: 10px;
+ min-height: 200px;
+}
+
+.heading{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    margin-top: 40px;
+}
+
+.heading img{
+    width: 20px;
+    margin: 0 5px;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 10px 0;
+}
+
+.search input{
+ 
+}
+
+.search button{
+    border: none;
+    outline: none;
+    background-color: rgb(226, 147, 1);
+    color: white;
+    border-radius: 80px;
+    
+    width: 20%;
+    height: 45px;
+    font-size: 18px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.search button:hover{
+    cursor: pointer;
+    background-color: rgb(255, 166, 1);
+}
+
+
+.task_con{
+    margin: 10px 30px;
+    font-size: 18px;
+    position: relative;
+}
+.task_con div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+}
+.task_con p{
+margin: 0 15px;
+cursor: pointer;
+}
+.task_con input{
+    background-color: black;
+    font-size: large;
+}
+
+#task_i{
+    position: absolute;
+    right: 1px;
+    cursor: pointer;
+}

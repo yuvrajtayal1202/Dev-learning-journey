@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    body{
+        background: linear-gradient(135deg, #4203a9, #90bafc);
+        width: 100%;
+        height: 100dvh;
+    }
+    .container{
+        width: 70%;
+        margin: auto;
+        margin-top:  200px;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: center;
+    }
+    .heading{
+        margin-bottom: 20px ;
+    }
+
+    .heading h2{
+   color: white;
+   font-size: 60px;
+
+    }
+    .heading h2 span{
+        color: yellow;
+    }
+
+    .age-con{
+        background-color: rgb(148 ,127 ,212);
+        width: 500px;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 5px;
+    }
+    .age-con input{
+    width: 60%;
+    border: none;
+    outline: none; 
+    border-radius: 8px;
+    height: 40px;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.age-con::-webkit-calender-picker-indicator{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-position: calc(100% -10px);
+}
+.age-con button{
+    background-color: rgb(255, 255, 0);
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    width: 20%;
+    height: 40px;
+    margin: 0 20px;
+}
+.age-con button:hover{
+    background-color: rgb(172, 172, 0);
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+.result_p{
+    font-size: 22px;
+    color: white;
+    margin: 30px 10px;
+    /* background-color: burlywood; */
+}
+.result_p span{
+    color: yellow;
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="heading">
+            <h2>JavaScript <br><span>Age Calculator</span></h2>
+
+        </div>
+        <div class="age-con">
+            <input type="date" id="dateInput">
+            <button>Calculate</button>
+        </div>
+    </div>
+</body>
+<script>
+    const input = document.getElementById("dateInput")
+    const button = document.querySelector("button")
+    const con = document.querySelector(".container")
+
+  
+
+    input.addEventListener("click", function () {
+        this.showPicker(); // Opens the date picker when the input is clicked
+    });
+button.addEventListener('click', function(){
+    
+    const input_v = input.value
+
+    function cal_age(){
+       const u_year = Number(input_v.slice(0, 4))
+       const c_year = new Date().getFullYear()
+       const a_year = c_year - u_year
+
+
+       const u_mon = input_v.slice(5, 7)
+       const c_mon = Number(new Date().getMonth() + 1)
+       const a_mon = c_mon - u_mon
+
+
+       const u_date = input_v.slice(8, 10)
+       const c_date = new Date().getDate()
+       const a_date = c_date - u_date
+       
+       
+       const result = document.createElement('div')
+       result.className = "result_con"
+       
+       const result_p = document.createElement('p')
+       result_p.innerHTML = `You are <span>${a_year}</span> Years,<span> ${a_mon}</span> Months and <span>${a_date}</span> Days OLD!!`
+       result_p.className = "result_p"
+       result.appendChild(result_p)
+       
+       con.appendChild(result)
+   }
+
+    if(input_v == ""){
+    alert("Please Enter Your DOB");
+    } 
+    else{
+        console.log(input_v)
+        cal_age()
+    }
+})
+</script>
+
+</html>
