@@ -21,6 +21,7 @@ Each folder contains daily markdown logs of what I learned.
 
 | Tech        | Folder Link                      |
 |-------------|----------------------------------|
+| JavaScript       | [`JavaScript/`](./JavaScript)              |
 | React       | [`react/`](./react)              |
 
 ---
