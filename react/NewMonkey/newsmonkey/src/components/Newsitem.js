@@ -6,7 +6,7 @@ export class NewItem extends Component {
         console.log("Hello I am a constructor")
     }
   render() {
-    let {title, description, imageUrl} = this.props
+    let {title, description, imageUrl, newId} = this.props
     return (
       <div>
         <div className="card my-3" style={{width: "18rem"}}>
@@ -17,7 +17,7 @@ export class NewItem extends Component {
               {description}
             </p>
             <a href="/" className="btn btn-sm btn-primary">
-              Go somewhere
+              Read More
             </a>
           </div>
         </div>
