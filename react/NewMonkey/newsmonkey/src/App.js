@@ -7,7 +7,7 @@ function App() {
   return (
  <>
  <Header/>
- <News/>
+ <News pageSize = {3}/>
   </>
   );
 }

@@ -16,7 +16,7 @@ export default class News extends Component {
   }
 
   fetchArticles = async (page) => {
-    const url = `https://newsapi.org/v2/everything?q=bitcoin&apiKey=6412af9a3075415e9b2d7a80cdd62cef&page=${page}&pageSize=6`;
+    const url = `https://newsapi.org/v2/everything?q=bitcoin&apiKey=6412af9a3075415e9b2d7a80cdd62cef&page=${page}&pageSize=${this.props.pageSize}`;
 
     try {
       let data = await fetch(url);
@@ -42,6 +42,7 @@ export default class News extends Component {
       const nextPage = this.state.page + 1;
       await this.fetchArticles(nextPage);
       this.setState({ page: nextPage });
+
     }
   };
 
