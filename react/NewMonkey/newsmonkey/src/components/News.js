@@ -16,18 +16,19 @@ export default class News extends Component {
     this.setState({ loading: true });
     setTimeout(async () => {
       await this.fetchArticles(this.state.page);
-    }, 1000); // 1 second loading delay on initial load
+    }, 500); // 1 second loading delay on initial load
   }
 
   fetchArticles = async (page) => {
-    const url = `https://newsapi.org/v2/everything?q=bitcoin&apiKey=6412af9a3075415e9b2d7a80cdd62cef&page=${page}&pageSize=${this.props.pageSize}`;
+    // const url = `https://newsapi.org/v2/everything?q=bitcoin&apiKey=6412af9a3075415e9b2d7a80cdd62cef&page=${page}&pageSize=${this.props.pageSize}&country=${this.props.country}`;
+    const url = `https://newsapi.org/v2/everything?country=us?q=bitcoin&apiKey=6412af9a3075415e9b2d7a80cdd62cef&page=${page}&pageSize=${this.props.pageSize}`;
 
     try {
       let data = await fetch(url);
       let parsedData = await data.json();
       const articles = Array.isArray(parsedData.articles)
         ? parsedData.articles
-        : [];
+        : []; 
 
       this.setState({
         articles,
@@ -46,7 +47,7 @@ export default class News extends Component {
     setTimeout(async () => {
       await this.fetchArticles(nextPage);
       this.setState({ page: nextPage });
-    }, 1000); // 1 second loading delay on Next
+    }, 500); // 1 second loading delay on Next
   };
 
   handlePre = async () => {
