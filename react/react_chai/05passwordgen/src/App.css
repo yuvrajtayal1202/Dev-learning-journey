@@ -3,14 +3,41 @@
 }
 .outer{
   width: 100%;
-  max-width: 250px;
+  max-width: 400px;
   margin: 100px auto;
   padding: 30px 100px;
   background-color: rgba(128, 128, 128, 0.699);
   text-align: center;
   color: orange;
+  border-radius: 10px;
 }
 .inner{
   display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.inner #passwordi{
+  outline: none;
+  margin: 1rem 0;
+  height: 40px;
   border-radius: 10px;
+  width: 400px;
+}
+.inner button{
+  height: 38px;
+}
+.cont{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.con{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.range{
+  cursor: pointer;
 }
