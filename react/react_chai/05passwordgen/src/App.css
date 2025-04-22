@@ -1,0 +1,16 @@
+*{
+  box-sizing: border-box;
+}
+.outer{
+  width: 100%;
+  max-width: 250px;
+  margin: 100px auto;
+  padding: 30px 100px;
+  background-color: rgba(128, 128, 128, 0.699);
+  text-align: center;
+  color: orange;
+}
+.inner{
+  display: flex;
+  border-radius: 10px;
+}
