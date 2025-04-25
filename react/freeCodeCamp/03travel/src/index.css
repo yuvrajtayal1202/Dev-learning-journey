@@ -34,18 +34,23 @@ body{
 .main{
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   padding: 30px;
+  flex-shrink: 0;
 }
+/* .main-img{
+  
+} */
 .main-img img{
-width: 130px;
-height: 150px;
+  overflow: hidden;
+  width: 130px;
+  height: 200px;
 border-radius: 10px;
 }
 .main-divider{
   display: flex;
   gap: 20px;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .main-right{
@@ -53,11 +58,17 @@ border-radius: 10px;
   flex-direction: column;
   
 }
-.main-right h1{
-  margin: 0;
+.main-right h2{
+  margin: 10px;
   
 }
 .main-right h3{
   margin: 0;
   
+}
+
+.main-top{
+  font-size: 15px;
+  display: flex;
+  gap: 1rem;
 }
