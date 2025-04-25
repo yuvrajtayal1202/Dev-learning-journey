@@ -12,7 +12,6 @@ body{
   width: 100%;
   max-width: 500px;
   margin: auto;
-  border: 2px solid #ffff00;
   min-height: 600px;
   background-color: white;
 }
