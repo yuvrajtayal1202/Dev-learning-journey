@@ -1,10 +1,14 @@
 import React from 'react'
+import Header from './components/Header'
 
 function App() {
 
   return (
     <>
-     Hii
+    <div className="container">
+
+     <Header/>
+    </div>
     </>
   )
 }
