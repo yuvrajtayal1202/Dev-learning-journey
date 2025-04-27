@@ -1,46 +1,4 @@
-import React from 'react'
-
-export default function Main() {
-    const [ingres, setIngres] = React.useState([])
-    const [recipeShowm, setRecipeShown] = React.useState(false)
-    const ingredientListitems = ingres.map((ing) =>(
-        <li key={ing}>{ing}</li>
-    ))
-
-    function addIng(formData){
-        const newIngredient = formData.get('ingredient')
-        setIngres([...ingres, newIngredient])
-        console.log(ingres)
-    }
-
-    function toggleRecipeShown(){
-        setRecipeShown((prevres) => !prevres)
-    }
-  return (
-<main className="main">
-    <form action={addIng}>
-        <input 
-        aria-label='Add ingredient' 
-        type="text" 
-        placeholder='e.g. oregano' 
-        name='ingredient'
-        />
-        <button >+ Add ingredient</button>
-    </form>
-    <section>
-       {ingres.length > 0?<h2 >Ingredients on hand:</h2> : null}
-    <ul className='indgredients-list'>{ingredientListitems}</ul>
-    {ingres.length > 3?<div className="recipe-cont"> 
-        <div>
-            <h3>Ready for a recipe?</h3>
-            <p>Generate a recipe from your list of ingredients</p>
-        </div>
-        <button onClick={toggleRecipeShown}>Get a recipe</button>
-    </div>: null}
-
-    </section>
-
-    <section>
+<section>
     <h2>Chef Claude Recommends:</h2>
     <article className="suggested-recipe-container" aria-live="polite">
         <p>Based on the ingredients you have available, I would recommend making a simple a delicious <strong>Beef Bolognese Pasta</strong>. Here is the recipe:</p>
@@ -72,7 +30,3 @@ export default function Main() {
         </ol>
     </article>
 </section>
-</main>
-  )
-}
-
