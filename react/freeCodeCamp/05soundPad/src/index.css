@@ -4,6 +4,10 @@
 
 body {
     background-color: #1C1917;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
 }
 
 main {
@@ -25,5 +29,9 @@ button {
     border: 3px solid white;
     border-radius: 5px;
     cursor: pointer;
-    
+    opacity: 0.1;
+}
+
+button.on{
+    opacity: 1;
 }
