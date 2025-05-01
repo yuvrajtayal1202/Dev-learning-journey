@@ -11,6 +11,13 @@ function App() {
           programming world safe from Assembly!
         </p>
       </header>
+
+     <section className="game-status">
+      <h2>
+        You Win!
+      </h2>
+      <p>Well Done</p>
+     </section>
      </main>
     </>
   )

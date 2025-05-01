@@ -14,10 +14,6 @@ body {
 }
 
 .header{
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; */
     text-align: center ;
 }
 
@@ -30,4 +26,21 @@ body {
     font-size: 0.875rem;
     max-width: 350px;
     color: rgb(167, 165, 165);
+}
+.game-status{
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+    margin-block: 30;
+    padding-block: 8px;
+}
+.game-status h2{
+    font-size: 1.25rem;
+    margin: 0;
+}
+.game-status p{
+    /* font-size: 1.25rem; */
+    margin: 5px;
 }
