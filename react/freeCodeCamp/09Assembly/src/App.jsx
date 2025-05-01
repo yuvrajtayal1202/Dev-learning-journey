@@ -1,7 +1,16 @@
 import React from 'react'
+import {languages}  from "./languages";
 
 function App() {
+  const languageElements = languages.map(language => {
+   let  styles ={
+      backgroundColor: language.backgroundColor,
+      color: language.color
+    }
 
+    return(<span style={styles}>{language.name}</span>)
+  })
+console.log(languages)
   return (
     <>
      <main className="main">
@@ -16,7 +25,11 @@ function App() {
       <h2>
         You Win!
       </h2>
-      <p>Well Done</p>
+      <p>Well Done🎉</p>
+     </section>
+
+     <section className="language-chips">
+      {languageElements}
      </section>
      </main>
     </>

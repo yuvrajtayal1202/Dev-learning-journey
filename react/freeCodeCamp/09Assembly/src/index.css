@@ -33,7 +33,7 @@ body {
     flex-direction: column;
     align-items: center;
     border-radius: 4px;
-    margin-block: 30;
+    margin-block: 30px;
     padding-block: 8px;
 }
 .game-status h2{
@@ -43,4 +43,17 @@ body {
 .game-status p{
     /* font-size: 1.25rem; */
     margin: 5px;
+}
+
+.language-chips{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 350px;
+    justify-content: center;
+    gap: 5px;
+    margin: auto;
+}
+.language-chips span{
+border-radius: 3px;
+padding: 5px;
 }
