@@ -2,7 +2,7 @@ import React from 'react'
 import {languages}  from "./languages";
 
 function App() {
-const [currentWord, setCurrentWord] = React.useState("React")
+
 
   const languageElements = languages.map(language => {
    let  styles ={
@@ -12,13 +12,19 @@ const [currentWord, setCurrentWord] = React.useState("React")
     return(<span style={styles}>{language.name}</span>)
   })
 
-
+  const [currentWord, setCurrentWord] = React.useState("React")
   const wordElements = currentWord.split("").map((letter, index) => {
     console.log(letter)
     return(<span key={index}>{letter.toUpperCase()}</span>)
   })
+  
 
-
+  const alphabets = "abcdefghijklmnopqrstuvwxyz";
+  const keyboardElements = alphabets.split("").map((letter, index) => {
+    console.log(letter)
+    return(<button key={index}>{letter.toUpperCase()}</button>)
+  })
+ 
   return (
     <>
      <main className="main">
@@ -42,6 +48,10 @@ const [currentWord, setCurrentWord] = React.useState("React")
 
        <section className="word-display">
     {wordElements}
+       </section>
+
+       <section className="keyboard-display">
+        {keyboardElements}
        </section>
 
      </main>

@@ -12,7 +12,6 @@ body {
   display: flex;
   justify-content: center;
 }
-
 .header{
     text-align: center ;
 }
@@ -67,4 +66,21 @@ padding: 5px;
     padding: 4px 9px;
     background-color: #323232;
     border-bottom: 2px solid  white;
+}
+
+.keyboard-display{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 450px;
+    justify-content: center;
+    margin: auto;
+    gap: 8px;
+}
+.keyboard-display button{
+    background-color: yellow;
+    border: 1px solid white;
+    border-radius: 3px ;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
 }
