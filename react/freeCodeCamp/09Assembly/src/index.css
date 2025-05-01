@@ -13,7 +13,9 @@ body {
   justify-content: center;
 }
 .header{
-    text-align: center ;
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
 }
 
 .header h1{
@@ -23,8 +25,8 @@ body {
 }
 .header p{
     font-size: 0.875rem;
-    max-width: 350px;
     color: rgb(167, 165, 165);
+    /* margin: auto; */
 }
 .game-status{
     background-color: green;
@@ -83,4 +85,17 @@ padding: 5px;
     height: 35px;
     width: 35px;
     cursor: pointer;
+}
+
+.new-game-btn{
+    margin-block: 25px;
+    display: flex;
+    justify-content: center;
+}
+.new-game-btn button{
+    background-color: #2626ff;
+    color: white;
+    padding: 8px 40px;
+    border: none;
+    border-radius: 5px;
 }
