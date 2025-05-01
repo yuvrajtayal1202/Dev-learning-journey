@@ -2,24 +2,38 @@ import React from "react";
 import { languages } from "./languages";
 
 function App() {
-  const languageElements = languages.map((language) => {
+  const [guessedLetters, setGuessedLetters] = React.useState([]);
+  console.log(guessedLetters);
+  function addGuessedletter(letter) {
+    setGuessedLetters((prevLetters) =>(  
+      prevLetters.includes(letter) ? prevLetters : [...prevLetters, letter]
+    ))};
+
+
+  const languageElements = languages.map((language, index) => {
     let styles = {
       backgroundColor: language.backgroundColor,
       color: language.color,
     };
-    return <span style={styles}>{language.name}</span>;
+    return (
+      <span key={index} style={styles}>
+        {language.name}
+      </span>
+    );
   });
 
   const [currentWord, setCurrentWord] = React.useState("React");
   const wordElements = currentWord.split("").map((letter, index) => {
-    console.log(letter);
     return <span key={index}>{letter.toUpperCase()}</span>;
   });
 
   const alphabets = "abcdefghijklmnopqrstuvwxyz";
   const keyboardElements = alphabets.split("").map((letter, index) => {
-    console.log(letter);
-    return <button key={index}>{letter.toUpperCase()}</button>;
+    return (
+      <button onClick={() => addGuessedletter(letter)} key={index}>
+        {letter.toUpperCase()}
+      </button>
+    );
   });
 
   return (
