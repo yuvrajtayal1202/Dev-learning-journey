@@ -78,6 +78,7 @@ padding: 5px;
     margin: auto;
     gap: 8px;
 }
+
 .keyboard-display button{
     background-color: yellow;
     border: 1px solid white;
@@ -85,6 +86,12 @@ padding: 5px;
     height: 35px;
     width: 35px;
     cursor: pointer;
+}
+.keyboard-display button.correct{
+    background-color: green;
+}
+.keyboard-display button.wrong{
+    background-color: red;
 }
 
 .new-game-btn{
