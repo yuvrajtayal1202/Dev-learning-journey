@@ -57,3 +57,14 @@ body {
 border-radius: 3px;
 padding: 5px;
 }
+.word-display{
+    display: flex;
+    justify-content: center;
+    margin-block: 30px;
+    gap: 2px;
+}
+.word-display span{
+    padding: 4px 9px;
+    background-color: #323232;
+    border-bottom: 2px solid  white;
+}

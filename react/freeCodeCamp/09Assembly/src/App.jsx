@@ -2,15 +2,23 @@ import React from 'react'
 import {languages}  from "./languages";
 
 function App() {
+const [currentWord, setCurrentWord] = React.useState("React")
+
   const languageElements = languages.map(language => {
    let  styles ={
       backgroundColor: language.backgroundColor,
       color: language.color
     }
-
     return(<span style={styles}>{language.name}</span>)
   })
-console.log(languages)
+
+
+  const wordElements = currentWord.split("").map((letter, index) => {
+    console.log(letter)
+    return(<span key={index}>{letter.toUpperCase()}</span>)
+  })
+
+
   return (
     <>
      <main className="main">
@@ -31,6 +39,11 @@ console.log(languages)
      <section className="language-chips">
       {languageElements}
      </section>
+
+       <section className="word-display">
+    {wordElements}
+       </section>
+
      </main>
     </>
   )
