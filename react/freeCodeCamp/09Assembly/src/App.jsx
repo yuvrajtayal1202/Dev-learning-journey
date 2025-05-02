@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import { languages } from "./languages";
 import { getFarewellText } from "./utils";
+import { getRandomWord } from "./utils";
 
 function App() {
   const [guessedLetters, setGuessedLetters] = React.useState([]);
@@ -17,7 +18,7 @@ function App() {
     // }
   }
 
-  const [currentWord, setCurrentWord] = React.useState("react");
+  const [currentWord, setCurrentWord] = React.useState(getRandomWord());
   const wordElements = currentWord.split("").map((letter, index) => {
     return (
       <span key={index}>
@@ -101,6 +102,8 @@ function App() {
         onClick={() => addGuessedletter(letter)}
         key={index} 
         disabled = {isGameOver}
+        aria-label={`Letter ${letter}`}
+        aria-disabled= {guessedLetters.includes(letter)}
       >
         {letter.toUpperCase()}
       </button>
