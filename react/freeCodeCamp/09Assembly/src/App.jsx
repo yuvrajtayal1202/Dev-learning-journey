@@ -16,6 +16,8 @@ function App() {
     setGuessedLetters((prevLetters) =>
       prevLetters.includes(letter) ? prevLetters : [...prevLetters, letter]
     ); 
+
+    
   }
 
   const wordElements = currentWord.split("").map((letter, index) => {
