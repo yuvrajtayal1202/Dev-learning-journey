@@ -5,8 +5,13 @@ import { getFarewellText } from "./utils";
 import { getRandomWord } from "./utils";
 
 function App() {
-  const [guessedLetters, setGuessedLetters] = React.useState([]);
+  const [currentWord, setCurrentWord] = React.useState(() => getRandomWord());
 
+  const [guessedLetters, setGuessedLetters] = React.useState([]);
+  const wrongGuessCount = guessedLetters.filter(
+    (letter) => !currentWord.includes(letter)
+  );
+  const isGameLost = wrongGuessCount.length >= languages.length - 1;
   function addGuessedletter(letter) {
     setGuessedLetters((prevLetters) =>
       prevLetters.includes(letter) ? prevLetters : [...prevLetters, letter]
@@ -18,24 +23,22 @@ function App() {
     // }
   }
 
-  const [currentWord, setCurrentWord] = React.useState(() => getRandomWord());
   const wordElements = currentWord.split("").map((letter, index) => {
+    const shouldRevealLetter = isGameLost || guessedLetters.includes(letter)
     return (
       <span key={index}>
-        {guessedLetters.includes(letter) ? letter.toUpperCase() : ""}
+        {shouldRevealLetter ? letter.toUpperCase() : ""}
       </span>
     );
   });
-  const wrongGuessCount = guessedLetters.filter(
-    (letter) => !currentWord.includes(letter)
-  );
+
   if (wrongGuessCount.length >= 8) {
     console.log("Over");
   }
   const isGameWon = currentWord
     .split("")
     .every((letter) => guessedLetters.includes(letter));
-  const isGameLost = wrongGuessCount.length >= languages.length - 1;
+
 
   const isGameOver = isGameLost || isGameWon;
 
