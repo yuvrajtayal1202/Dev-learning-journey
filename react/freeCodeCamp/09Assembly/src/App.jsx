@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { languages } from "./languages";
 import { getFarewellText } from "./utils";
 import { getRandomWord } from "./utils";
-
+import Confetti from "react-confetti"
 function App() {
   const [currentWord, setCurrentWord] = React.useState(() => getRandomWord());
 
@@ -15,18 +15,16 @@ function App() {
   function addGuessedletter(letter) {
     setGuessedLetters((prevLetters) =>
       prevLetters.includes(letter) ? prevLetters : [...prevLetters, letter]
-    );
-
-    //   if(guessedLetters.includes(letter) && !currentWord.includes(letter)){
-    // setwrongGuessCount(prevCount => prevCount +1)
-    // console.log(wrongGuessCount)
-    // }
+    ); 
   }
 
   const wordElements = currentWord.split("").map((letter, index) => {
     const shouldRevealLetter = isGameLost || guessedLetters.includes(letter)
+    const letterClassName = clsx(
+      isGameLost && !guessedLetters.includes(letter) && "missed-letter"
+    )
     return (
-      <span key={index}>
+      <span key={index} className={letterClassName}>
         {shouldRevealLetter ? letter.toUpperCase() : ""}
       </span>
     );
@@ -125,6 +123,8 @@ function App() {
   })
   return (
     <>
+    {isGameWon && <Confetti
+    recycle= {false} numberOfPieces={1000}/>}
       <main className="main">
         <header className="header">
           <h1>Assembly: Endgame </h1>
