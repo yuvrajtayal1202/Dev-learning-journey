@@ -22,9 +22,9 @@ This repo is my public log documenting what I learn daily as I build my frontend
 ---
 
 ## 📅 Daily Logs:
- <h5> [`See Daily Logs`](./Daily_Logs) </h5>
+  [`See Daily Logs`](./Daily_Logs) 
 
-- I have started these logging when I have already learned HTML, CSS, JS Daily logs are from React
+(I have started these logging when I have already learned HTML, CSS, JS Daily logs are from React)
 
 ---
 
