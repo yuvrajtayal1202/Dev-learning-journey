@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import { languages } from "./languages";
+import { getFarewellText } from "./utils";
 
 function App() {
   const [guessedLetters, setGuessedLetters] = React.useState([]);
@@ -37,6 +38,9 @@ function App() {
 
   const isGameOver = isGameLost || isGameWon;
 
+
+   const lastGuessedLetter = guessedLetters[guessedLetters.length - 1]
+   const isLastGuessedIncorrect = lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
   const languageElements = languages.map((language, index) => {
     let styles = {
       backgroundColor: language.backgroundColor,
@@ -55,6 +59,33 @@ function App() {
   });
 
   const alphabets = "abcdefghijklmnopqrstuvwxyz";
+  function renderGameStatus() {
+    if (!isGameOver && isLastGuessedIncorrect) {
+      const language = languages[wrongGuessCount.length - 1];
+      return (
+        <p className="farewell-message">
+          {getFarewellText(language?.name || "Unknown")}
+        </p>
+      );
+    } else {
+      if (isGameWon) {
+        return (
+          <>
+            <h2>You Win!</h2>
+            <p>Well Done🎉</p>
+          </>
+        );
+      } else if (isGameLost) {
+        return (
+          <>
+            <h2>Game Over!</h2>
+            <p>You lose! better start learning Assembly😂</p>
+          </>
+        );
+      }
+    }
+  }
+
   const keyboardElements = alphabets.split("").map((letter, index) => {
     const isGuessed = guessedLetters.includes(letter);
     const isCorrect = isGuessed && currentWord.includes(letter);
@@ -81,8 +112,8 @@ function App() {
 
   const gameStatusClass = clsx("game-status", {
     won: isGameWon,
-    lost: isGameLost
-
+    lost: isGameLost,
+    farewell: !isGameOver && isLastGuessedIncorrect
   })
   return (
     <>
@@ -96,19 +127,8 @@ function App() {
         </header>
 
         <section className={gameStatusClass}>
-          {isGameOver ? (
-            isGameWon ? (
-              <>
-                <h2>You Win!</h2>
-                <p>Well Done🎉</p>
-              </>
-            ) : (
-              <>
-                <h2>Game Over!</h2>
-                <p>You lose! better start learning Assembly😂</p>
-              </>
-            )
-          ) : null}
+          {renderGameStatus()}
+
         </section>
 
         <section className="language-chips">{languageElements}</section>
