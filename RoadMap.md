@@ -40,13 +40,13 @@ Check my [dev-learning-journey](https://github.com/YuvrajTayal1202/dev-learning-
 
 ---
 
-## 🧑‍💻 Current Focus
+<!-- ## 🧑‍💻 Current Focus
 
 > 📍 React (Components, State, Props, JSX, Hooks)  
 > 📍 Building 2–3 mini React projects  
 > 📍 Daily posts on Twitter, weekly on LinkedIn  
 
----
+--- -->
 
 ## 🧭 Strategy
 
