@@ -23,6 +23,13 @@ function App() {
     return <span key={index}>{guessedLetters.includes(letter)?letter.toUpperCase():""}</span>;
   });
   const wrongGuessCount  = guessedLetters.filter(letter => !currentWord.includes(letter));
+  if(wrongGuessCount.length >= 8 ){
+   console.log("Over")
+}
+ const isGameWon = currentWord.split("").every(letter => guessedLetters.includes(letter))
+ const isGameLost = wrongGuessCount.length >= languages.length - 1
+
+ const isGameOver = isGameLost || isGameWon
 
   const languageElements = languages.map((language, index) => {
     let styles = {
@@ -34,7 +41,6 @@ function App() {
       lost: index < wrongGuessCount.length
     });
 
-    console.log(classL)
     return (
       <span key={index} style={styles} className={classL}>
         {language.name}
@@ -63,7 +69,10 @@ function App() {
       </button>
     );
   });
-console.log(wrongGuessCount.length)
+
+  function resetGame() {
+    console.log("rese")
+  }
   return (
     <>
       <main className="main">
@@ -85,9 +94,9 @@ console.log(wrongGuessCount.length)
         <section className="word-display">{wordElements}</section>
 
         <section className="keyboard-display">{keyboardElements}</section>
-        <section className="new-game-btn">
-          <button>New Game</button>
-        </section>
+{      isGameOver && <section className="new-game-btn">
+          <button onClick={resetGame}>New Game</button>
+        </section>}
       </main>
     </>
   );
