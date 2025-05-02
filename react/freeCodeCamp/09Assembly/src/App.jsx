@@ -18,7 +18,7 @@ function App() {
     // }
   }
 
-  const [currentWord, setCurrentWord] = React.useState(getRandomWord());
+  const [currentWord, setCurrentWord] = React.useState(() => getRandomWord());
   const wordElements = currentWord.split("").map((letter, index) => {
     return (
       <span key={index}>
@@ -111,7 +111,8 @@ function App() {
   });
 
   function resetGame() {
-    console.log("rese");
+   setCurrentWord(getRandomWord)
+   setGuessedLetters([])
   }
 
   const gameStatusClass = clsx("game-status", {
