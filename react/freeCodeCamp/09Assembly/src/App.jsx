@@ -3,7 +3,6 @@ import clsx from "clsx";
 import { languages } from "./languages";
 
 function App() {
-
   const [guessedLetters, setGuessedLetters] = React.useState([]);
 
   function addGuessedletter(letter) {
@@ -11,25 +10,32 @@ function App() {
       prevLetters.includes(letter) ? prevLetters : [...prevLetters, letter]
     );
 
-  //   if(guessedLetters.includes(letter) && !currentWord.includes(letter)){
-  // setwrongGuessCount(prevCount => prevCount +1)
-  // console.log(wrongGuessCount)
-  // }
-
+    //   if(guessedLetters.includes(letter) && !currentWord.includes(letter)){
+    // setwrongGuessCount(prevCount => prevCount +1)
+    // console.log(wrongGuessCount)
+    // }
   }
-  
+
   const [currentWord, setCurrentWord] = React.useState("react");
   const wordElements = currentWord.split("").map((letter, index) => {
-    return <span key={index}>{guessedLetters.includes(letter)?letter.toUpperCase():""}</span>;
+    return (
+      <span key={index}>
+        {guessedLetters.includes(letter) ? letter.toUpperCase() : ""}
+      </span>
+    );
   });
-  const wrongGuessCount  = guessedLetters.filter(letter => !currentWord.includes(letter));
-  if(wrongGuessCount.length >= 8 ){
-   console.log("Over")
-}
- const isGameWon = currentWord.split("").every(letter => guessedLetters.includes(letter))
- const isGameLost = wrongGuessCount.length >= languages.length - 1
+  const wrongGuessCount = guessedLetters.filter(
+    (letter) => !currentWord.includes(letter)
+  );
+  if (wrongGuessCount.length >= 8) {
+    console.log("Over");
+  }
+  const isGameWon = currentWord
+    .split("")
+    .every((letter) => guessedLetters.includes(letter));
+  const isGameLost = wrongGuessCount.length >= languages.length - 1;
 
- const isGameOver = isGameLost || isGameWon
+  const isGameOver = isGameLost || isGameWon;
 
   const languageElements = languages.map((language, index) => {
     let styles = {
@@ -38,7 +44,7 @@ function App() {
     };
 
     const classL = clsx({
-      lost: index < wrongGuessCount.length
+      lost: index < wrongGuessCount.length,
     });
 
     return (
@@ -47,7 +53,6 @@ function App() {
       </span>
     );
   });
-
 
   const alphabets = "abcdefghijklmnopqrstuvwxyz";
   const keyboardElements = alphabets.split("").map((letter, index) => {
@@ -71,8 +76,14 @@ function App() {
   });
 
   function resetGame() {
-    console.log("rese")
+    console.log("rese");
   }
+
+  const gameStatusClass = clsx("game-status", {
+    won: isGameWon,
+    lost: isGameLost
+
+  })
   return (
     <>
       <main className="main">
@@ -84,9 +95,20 @@ function App() {
           </p>
         </header>
 
-        <section className="game-status">
-          <h2>You Win!</h2>
-          <p>Well Done🎉</p>
+        <section className={gameStatusClass}>
+          {isGameOver ? (
+            isGameWon ? (
+              <>
+                <h2>You Win!</h2>
+                <p>Well Done🎉</p>
+              </>
+            ) : (
+              <>
+                <h2>Game Over!</h2>
+                <p>You lose! better start learning Assembly😂</p>
+              </>
+            )
+          ) : null}
         </section>
 
         <section className="language-chips">{languageElements}</section>
@@ -94,9 +116,11 @@ function App() {
         <section className="word-display">{wordElements}</section>
 
         <section className="keyboard-display">{keyboardElements}</section>
-{      isGameOver && <section className="new-game-btn">
-          <button onClick={resetGame}>New Game</button>
-        </section>}
+        {isGameOver && (
+          <section className="new-game-btn">
+            <button onClick={resetGame}>New Game</button>
+          </section>
+        )}
       </main>
     </>
   );
