@@ -99,7 +99,8 @@ function App() {
       <button
         className={className}
         onClick={() => addGuessedletter(letter)}
-        key={index}
+        key={index} 
+        disabled = {isGameOver}
       >
         {letter.toUpperCase()}
       </button>

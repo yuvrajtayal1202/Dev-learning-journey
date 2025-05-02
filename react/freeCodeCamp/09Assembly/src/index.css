@@ -126,6 +126,10 @@ position: relative;
     width: 35px;
     cursor: pointer;
 }
+.keyboard-display button:disabled{
+    cursor: not-allowed;
+    opacity: 0.5;
+}
 .keyboard-display button.correct{
     background-color: green;
 }
