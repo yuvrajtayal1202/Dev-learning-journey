@@ -30,3 +30,4 @@ Routing adds a whole new layer of power to React apps. Excited to move from stat
 ---
 
 📍 #100DaysOfCode #React #ReactRouter #WebDevelopment
+Today was a rest day
