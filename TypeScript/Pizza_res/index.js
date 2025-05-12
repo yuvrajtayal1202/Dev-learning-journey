@@ -1,27 +1,31 @@
-var menu = [
+"use strict";
+const menu = [
     { name: "Margherita", price: 6 },
 ];
 var cashInRegister = 100;
-var nextOrderID = 1;
-var orderQueue = [];
+let nextOrderID = 1;
+let orderQueue = [];
 function addNewPizza(pizzaObj) {
     menu.push(pizzaObj);
 }
 function placeOrder(pizzaName) {
-    var selectedPizza = menu.find(function (pizzaObj) { return pizzaObj.name === pizzaName; });
+    const selectedPizza = menu.find(pizzaObj => pizzaObj.name === pizzaName);
     if (!selectedPizza) {
-        console.error("".concat(selectedPizza, " does not exists"));
+        console.error(`${selectedPizza} does not exists`);
         return;
     }
     cashInRegister += selectedPizza.price;
-    var newOrder = { pizza: selectedPizza.name, status: "ordered", id: nextOrderID++ };
+    const newOrder = { pizza: selectedPizza.name, status: "ordered", id: nextOrderID++ };
     orderQueue.push(newOrder);
     return newOrder;
 }
 function completeOrder(orderId) {
-    var completedOrder = orderQueue.find(function (pizzaObj) { return pizzaObj.id === orderId; });
+    const completedOrder = orderQueue.find(pizzaObj => pizzaObj.id === orderId);
     if (completedOrder) {
         completedOrder.status = "Completed";
+    }
+    else {
+        console.error(`${orderId} not foun din orderQueue`);
     }
     return completedOrder;
 }
