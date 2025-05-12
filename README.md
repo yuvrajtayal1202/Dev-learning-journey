@@ -5,19 +5,19 @@ This repo is my public log documenting what I learn daily as I build my frontend
 
 ---
 
-## ✅ Completed (Day 62):
-- HTML & CSS (Responsive layouts, Flexbox, Grid)
-- JavaScript (DOM, ES6, Events, Async JS)
-- React (JSX, Components Hooks, useEffect, State Management)
+## ✅ Completed (Day 70):
+- HTML & CSS 
+- JavaScript 
+- React 
 - React Router + Project Structuring
 - Tailwind CSS & Bootstrap
-- Git & GitHub (version control, branches, deploy workflows)
+- Git & GitHub 
 - Deployment via Vercel & Netlify
+- TypeScript
 ---
 
 ## 🚀 Currently Learning:
-- TypeScript
-
+- Node.js & Express.js
 ---
 
 ## 📅 Daily Logs:
@@ -32,6 +32,7 @@ This repo is my public log documenting what I learn daily as I build my frontend
 |-------------|----------------------------------|
 | JavaScript       | [`JavaScript/`](./JavaScript)              |
 | React       | [`react/`](./react)              |
+| TypeScript       | [`TypeScript/`](./TypeScript)              |
 
 ---
 
