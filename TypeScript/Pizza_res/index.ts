@@ -82,7 +82,7 @@ completeOrder(2)
 
 function addToArray<T>(array: T[], item: T): T[] {
     array.push(item)
-    return array
+    return array  
 }
 // example usage:
 addToArray(menu, { id: nextPizzaID++, name: "Chicken Bacon Ranch", price: 12 })
