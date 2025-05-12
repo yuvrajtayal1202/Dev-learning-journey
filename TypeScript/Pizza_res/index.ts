@@ -1,5 +1,10 @@
+var cashInRegister = 100;
+let nextOrderID = 1
+let nextPizzaID: number = 1
+let orderQueue: orderType[] = []
+
 type  pizzaType = {
-    id: number,
+    id?: number,
     name: string,
     price: number
 }
@@ -9,25 +14,17 @@ type orderType = {
      status: "ordered" | "completed",
      id: number 
 }
-const menu : pizzaType[] = [
-    { id: 1,name: "Margherita", price: 6 },
+const menu: pizzaType[] = [
+    { id: nextPizzaID++, name: "Margherita", price: 6 }
 ];
  
 
-var cashInRegister = 100;
-let nextOrderID = 1
 
-let orderQueue: orderType[] = []
-
-function addNewPizza(pizzaObj: pizzaType) {
-    menu.push(pizzaObj)
-}
-
-function placeOrder(pizzaName : string) {
+function placeOrder(pizzaName : string): orderType | undefined {
     const selectedPizza = menu.find(pizzaObj => pizzaObj.name === pizzaName)
     if(!selectedPizza){
         console.error(`${selectedPizza} does not exists`)
-        return
+        return;
     }
     cashInRegister += selectedPizza.price
     const newOrder : orderType = { pizza: selectedPizza.name, status: "ordered", id: nextOrderID++ }
@@ -35,7 +32,7 @@ function placeOrder(pizzaName : string) {
     return newOrder
 }
 
-function completeOrder(orderId: number) {
+function completeOrder(orderId: number): orderType | undefined  {
     const completedOrder = orderQueue.find(pizzaObj => pizzaObj.id === orderId)
     if (completedOrder) {
         completedOrder.status = "completed"
@@ -47,23 +44,33 @@ function completeOrder(orderId: number) {
 }
 
 
-function getPizzaDetails(identifier: string | number){
+function getPizzaDetails(identifier: string | number): pizzaType | undefined {
     if(typeof identifier === "number"){
-        const currentPizza = menu.find(menuObj => menuObj.id == identifier)
+        return menu.find(menuObj => menuObj.id == identifier)
     }
     else if(typeof identifier === "string"){
-        const currentPizza = menu.find(menuObj => menuObj.name.toLowerCase() == identifier.toLowerCase())
+        return menu.find(menuObj => menuObj.name.toLowerCase() == identifier.toLowerCase())
     }
     else{
         console.log("The paramenter `identifier` must be a `string` or the `number`")
+        return undefined
     }
 }
 
 
+function addNewPizza(pizzaObj: Omit<pizzaType, "id">): pizzaType {
+        const newPizza: pizzaType = {
+        id: nextPizzaID++,
+        ...pizzaObj
+    }
+    menu.push(newPizza)
+    return newPizza
+}
 
-addNewPizza({id: 1, name: "Paneer", price: 12 })
-addNewPizza({id: 2, name: "Mushroom", price: 12 })
-addNewPizza({id: 3, name: "Onion", price: 12 })
+
+addNewPizza({ name: "Paneer", price: 12 })
+addNewPizza({ name: "Mushroom", price: 12 })
+addNewPizza({ name: "Onion", price: 12 })
 
 placeOrder("Paneer")
 placeOrder("Margherita")
@@ -71,5 +78,3 @@ placeOrder("Margherita")
 completeOrder(2)
 
 console.log("Menu", menu)
-console.log("cashInRegister", cashInRegister)
-console.log("orderQueue", orderQueue)   
