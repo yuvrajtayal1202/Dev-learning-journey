@@ -50,4 +50,14 @@ addNewPizza({ name: "Onion", price: 12 });
 placeOrder("Paneer");
 placeOrder("Margherita");
 completeOrder(2);
-console.log("Menu", menu);
+// console.log("Menu", menu)
+function addToArray(array, item) {
+    array.push(item);
+    return array;
+}
+// example usage:
+addToArray(menu, { id: nextPizzaID++, name: "Chicken Bacon Ranch", price: 12 });
+// addToArray(orderQueue, { id: nextOrderID++, pizza: menu[2]?.name ?? "", status: "completed" })
+addToArray(orderQueue, { id: nextOrderID++, pizza: menu[2].name, status: "completed" });
+console.log(menu);
+console.log(orderQueue);
