@@ -33,6 +33,8 @@ This repo is my public log documenting what I learn daily as I build my frontend
 | JavaScript       | [`JavaScript/`](./JavaScript)              |
 | React       | [`react/`](./react)              |
 | TypeScript       | [`TypeScript/`](./TypeScript)              |
+| Node.js       | [`TypeScript/`](./Node.Js)              |
+| Express.js       | [`TypeScript/`](./Express.js)              |
 
 ---
 
