@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop Watch</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: rgb(201, 200, 200);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 100vw;
+        height: 100vh;
+      }
+      .stopwatch {
+        width: 600px;
+        height: 350px;
+        background: linear-gradient(rgba(0, 0, 0, 0.877), rgba(0, 0, 0, 0.651)),
+          url(images/background.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+        flex-direction: column;
+        position: relative;
+      }
+      .time-con {
+        margin-top: 100px;
+      }
+
+      .time-con span {
+        color: white;
+        font-size: 80px;
+      }
+
+      .controls {
+        display: flex;
+        align-items: center;
+        margin-top: 60px;
+      }
+      .controls img {
+        width: 50px;
+        margin: 0 20px;
+      }
+      .controls .start-btn {
+        width: 80px;
+      }
+      .controls img:hover {
+        transform: scale(1.2);
+        transition: transform 0.2s ease-in-out;
+      }
+
+
+      button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: #1e88e5;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1565c0;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="stopwatch">
+      <div class="time-con">
+        <span class="time">00 : 00 : 00</span>
+      </div>
+      <div class="controls">
+        <img src="images/stop.png" class="stop" onclick="watchstop()" />
+        <img src="images/start.png" class="start-btn" onclick="watchStart()" />
+        <img src="images/reset.png" class="reset" onclick="watchreset()" />
+      </div>
+    </div>
+    <button id="fullscreen-btn">Enter Fullscreen</button>
+
+    <script>
+      const time = document.querySelector(".time");
+      let [seconds, minutes, hour] = [0, 0, 0];
+      let timer = null;
+
+      function watchStart() {
+        if (!timer == null) {
+          clearInterval(timer);
+        }
+        timer = setInterval(function () {
+          seconds++;
+          if (seconds == 60) {
+            seconds = 0;
+            minutes++;
+            if (minutes == 60) {
+              minutes = 0;
+              hour++;
+            }
+          }
+          let h = hour < 10 ? "0" + hour : hour;
+          let m = minutes < 10 ? "0" + minutes : minutes;
+          let s = seconds < 10 ? "0" + seconds : seconds;
+
+          time.innerHTML = h + " : " + m + " : " + s;
+        }, 1000);
+      }
+      function watchstop() {
+        clearInterval(timer);
+      }
+      function watchreset() {
+        clearInterval(timer);
+        time.innerHTML = "00 : 00 : 00";
+        [seconds, minutes, hour] = [0, 0, 0];
+      }
+
+
+
+
+
+      const btn = document.getElementById("fullscreen-btn");
+
+btn.addEventListener("click", () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen()
+      .then(() => {
+        btn.textContent = "Exit Fullscreen";
+      })
+      .catch((err) => {
+        alert(`Error trying to enable full-screen mode: ${err.message}`);
+      });
+  } else {
+    document.exitFullscreen()
+      .then(() => {
+        btn.textContent = "Enter Fullscreen";
+      });
+  }
+});
+
+    </script>
+  </body>
+</html>

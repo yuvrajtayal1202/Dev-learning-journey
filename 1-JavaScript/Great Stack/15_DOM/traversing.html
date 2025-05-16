@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Traversing</title>
+</head>
+<body>
+     <div class="parent">
+        <p id="p1">Java Script Traversing 1</p>
+        <p>Java Script Traversing 2</p>
+        <p>Java Script Traversing 3</p>
+        <p>Java Script Traversing 4</p>
+     </div>
+     <script>
+         const p1 = document.querySelector("#p1")
+         const parent = document.querySelector(".parent")
+
+    //   Selecting Parent Element
+    console.log(p1.parentNode);
+
+
+    //   Selecting child Element
+    console.log(parent.childNodes);
+    
+    console.log(parent.firstChild);
+    
+    console.log(parent.firstElementChild);
+    
+    console.log(parent.lastElementChild);
+    
+    
+    //   Selecting sibling Element
+    console.log(p1.nextElementSibling)
+    console.log(p1.previousElementSibling)
+    </script>
+</body> 
+</html>

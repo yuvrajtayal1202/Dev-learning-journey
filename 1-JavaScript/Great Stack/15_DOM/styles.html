@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div class="parent">
+        <p>Java Script Style Property 1</p>
+        <p id="p2" style="background-color: aqua;">Java Script Style Property 2</p>
+        <p>Java Script Style Property 3</p>
+        <p>Java Script Style Property 4</p>
+        <p>Java Script Style Property 5</p>
+        <p>Java Script Style Property 6</p>
+    </div>
+
+    <script>
+       
+       let p1 = document.querySelector(".parent")
+       console.log(p1.firstElementChild);
+       p1.firstElementChild.style.color = "red"
+       
+       let p2 = document.querySelector("#p2")
+   let cssObj =  window.getComputedStyle(p2, null)
+console.log(cssObj.getPropertyValue("background-color"));
+
+
+    </script>
+</body>
+</html>

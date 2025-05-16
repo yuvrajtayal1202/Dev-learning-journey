@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box ;
+    font-family: monospace;
+}
+body{
+    background-color: black;
+    color: white;
+    display: flex ;
+    justify-content: center;
+}
+.card{
+    background: linear-gradient(120deg, #54f5b6, #444369);
+    margin-top: 150px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+}
+
+.search{
+    margin: 30px auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.search input{
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    height: 50px;
+    padding: 15px;
+    width: 80%;
+    font-size: 17px;
+}
+.search button{
+    border: none;
+    outline: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 60%;
+    cursor: pointer;
+
+}
+.search button:hover{
+    background-color: #dad9d9;
+}
+.search button img{
+    width: 15px;
+}
+
+.temp{
+    margin: 25px auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.temp img{
+    width: 57%;
+}
+.temp .p_temp{
+    margin-top: 10px;
+    font-size: 80px;
+}
+.temp .city{
+    font-size: 50px;
+    
+}
+
+
+.lower{
+    display: flex;
+    justify-content: space-around;
+}
+.humidity{    display: flex;
+    align-items: center;
+   margin-bottom: 30px;
+    /* justify-content: space-between; */
+}
+.hum-con{
+    margin: 0 10px;
+}
+.hum-img img{
+    width: 30px;
+
+}
+
+.p_humi,
+.p_wind{
+ font-size: 30px;
+ margin-bottom: 3px;
+ /* font-weight: 100; */
+}

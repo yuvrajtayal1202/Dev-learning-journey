@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>To Do List</title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="heading">
+        <h2>To-Do List</h2>
+        <img src="images/icon.png" alt="" />
+      </div>
+      <div class="search">
+        <input type="text" placeholder="Add your task" id="search" />
+        <button onclick="addTask()">Add</button>
+      </div>
+      <ul class="task-con">
+        <!-- <li class="task-li-closed">Yuvraj Tayal <span>&#10006;</span> </li> -->
+      </ul>
+    </div>
+
+
+    <script>
+      const search = document.querySelector("#search");
+      const task_con = document.querySelector(".task-con");
+
+      function addTask() {
+          if (search.value == "") {
+              alert("Add Your Task");
+            } else {
+                
+                let li = document.createElement("li");
+                let c = document.createElement("span");
+                li.innerText = search.value;
+                task_con.appendChild(li);
+                
+                c.innerHTML = "&#10006;";
+          li.appendChild(c);
+        }
+    search.value = "";
+    saveTask();
+}
+
+
+task_con.addEventListener("click", function (e) {
+    if (e.target.tagName === "LI") {
+        e.target.classList.toggle("closed");
+        console.log("yes")
+        saveTask();
+    }
+    else if(e.target.tagName === "SPAN"){
+        e.target.parentElement.remove();
+        saveTask();
+          }
+        });
+      
+        
+        function saveTask(){
+            localStorage.setItem("data", task_con.innerHTML)
+        }
+
+        function showTask(){
+            task_con.innerHTML = localStorage.getItem("data")
+        }
+        showTask()
+    </script>
+  </body>
+</html>
