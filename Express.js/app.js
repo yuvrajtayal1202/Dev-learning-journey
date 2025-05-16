@@ -1,32 +1,36 @@
-import express from "express";
-import { products } from "./data.js";
+const express = require("express");
 const app = express();
+const morgan = require('morgan')
+
+const logger = (req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next();
+};
+
+const authorise = (req, res, next) => {
+const {user} = req.query;
+if(user === 'john'){
+  req.user = {name: 'john', id: 3}
+  next()
+} 
+else{
+  res.status(401).send('unAuthorized')
+}
+};
+
+// app.use([logger, authorise]);
+// app.use(express.static ('./public'))
+app.use(morgan('tiny'))
+
 
 app.get("/", (req, res) => {
-  res.send('<h1>Home Page</h1><a href = "/api/products">products</a>');
+  res.send("Hello, world!");
 });
 
-app.get("/api/products", (req, res) => {
-  const newProduct = products.map((product) => {
-    const { id, name, image } = product;
-    return { id, name, image };
-  });
-  res.json(newProduct);
+app.get("/about", (req, res) => {
+  res.send("Hello, world! <br> this is About");
 });
 
-app.get("/api/products/:productID", (req, res) => {
-  const { productID } = req.params;
-
-  const singleProduct = products.find(
-    (product) => product.id === Number(productID)
-  );
-  if (!singleProduct) {
-    return res.status(404).send("Product Does Not Exist");
-  }
-
-  return res.json(singleProduct);
-});
-
-app.listen(800, () => {
-  // console.log("Server is listening on port 6000")
+app.listen(5000, () => {
+  console.log("Server is listening on port 5000");
 });
