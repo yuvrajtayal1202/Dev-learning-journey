@@ -5,7 +5,7 @@ This repo is my public log documenting what I learn daily as I build my frontend
 
 ---
 
-## ✅ Completed (Day 70):
+## ✅ Completed (Day 75):
 - HTML & CSS 
 - JavaScript 
 - React 
@@ -14,10 +14,11 @@ This repo is my public log documenting what I learn daily as I build my frontend
 - Git & GitHub 
 - Deployment via Vercel & Netlify
 - TypeScript
+- Node.js & Express.js
 ---
 
 ## 🚀 Currently Learning:
-- Node.js & Express.js
+- Rest APIs, Auth & JWT
 ---
 
 ## 📅 Daily Logs:
