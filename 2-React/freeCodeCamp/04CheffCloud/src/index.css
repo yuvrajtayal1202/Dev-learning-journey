@@ -1,0 +1,85 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+  /* background-color: black; */
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 500px;
+  min-height: 300px;
+  margin: auto;
+  margin-top: 100px;
+}
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  gap: 7px;
+  box-shadow: 0 1px 3px 0 rgb(0, 0, 0, 0.10), 0 1px 2px 0 rgb(0, 0, 0, 0.06);
+}
+.header img{
+  width: 30px;
+}
+.header h1{
+  font-size: 23px;
+  font-weight: 550;
+}
+
+.main{
+  width: 90%;
+  min-height: 250px;
+  margin: auto ;
+  margin-top: 40px;
+  padding: 0px 0 60px 0;
+}
+.main form{
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 12px;
+}
+.main form input{
+  padding: 9px 13px;
+  width: 260px;
+  border-radius: 4px;
+  border: 1px solid black;
+  flex-grow: 1;
+  min-width: 150px;
+  max-width: 450px;
+}
+.main form button{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 7px 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 3px;
+  width: 130px;
+}
+
+
+
+.recipe-cont{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: rgb(233, 230, 230);
+  border-radius: 10px;
+  padding: 10px ;
+  /* font-size: small; */
+}
+
+.recipe-cont button{
+  background-color: rgb(255, 101, 5);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+}
