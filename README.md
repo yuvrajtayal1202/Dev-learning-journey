@@ -35,9 +35,9 @@ This repo is my public log documenting what I learn daily as I build my frontend
 | React       | [`react/`](./2-React)              |
 | TypeScript       | [`TypeScript/`](./5-TypeScript)              |
 | Node.js       | [`TypeScript/`](./3-Node.Js)              |
-| Express.js       | [`TypeScript/`](./3-Express.js)              |
+| Express.js       | [`TypeScript/`](./4-Express.js)              |
 | MongoDB       | [`MongoDB/`](./6-MongoDB)              |
-| JWT(Auth)       | [`MongoDB/`](./7-JWT(Auth))              |
+| JWT(Auth)       | [`JWT(Auth)/`](./7-JWT(Auth))              |
 
 ---
 
