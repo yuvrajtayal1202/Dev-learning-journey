@@ -31,11 +31,13 @@ This repo is my public log documenting what I learn daily as I build my frontend
 ## 📄 Notes:
 | Tech        | Folder Link                      |
 |-------------|----------------------------------|
-| JavaScript       | [`JavaScript/`](./JavaScript)              |
-| React       | [`react/`](./react)              |
-| TypeScript       | [`TypeScript/`](./TypeScript)              |
-| Node.js       | [`TypeScript/`](./Node.Js)              |
-| Express.js       | [`TypeScript/`](./Express.js)              |
+| JavaScript       | [`JavaScript/`](./1-JavaScript)              |
+| React       | [`react/`](./2-react)              |
+| TypeScript       | [`TypeScript/`](./5-TypeScript)              |
+| Node.js       | [`TypeScript/`](./3-Node.Js)              |
+| Express.js       | [`TypeScript/`](./3-Express.js)              |
+| MongoDB       | [`MongoDB/`](./6-MongoDB)              |
+| JWT(Auth)       | [`MongoDB/`](./7-JWT(Auth))              |
 
 ---
 
