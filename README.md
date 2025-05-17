@@ -32,7 +32,7 @@ This repo is my public log documenting what I learn daily as I build my frontend
 | Tech        | Folder Link                      |
 |-------------|----------------------------------|
 | JavaScript       | [`JavaScript/`](./1-JavaScript)              |
-| React       | [`react/`](./2-react)              |
+| React       | [`react/`](./2-React)              |
 | TypeScript       | [`TypeScript/`](./5-TypeScript)              |
 | Node.js       | [`TypeScript/`](./3-Node.Js)              |
 | Express.js       | [`TypeScript/`](./3-Express.js)              |
