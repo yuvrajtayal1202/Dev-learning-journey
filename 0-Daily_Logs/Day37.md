@@ -3,7 +3,7 @@
 📅 Date: 18 May 2025  
 🏷️ #100DaysOfCode #JWTAuth #MongoDB #ExpressJS #BackendDev #MERN
 
----
+--- 
 
 ## 📘 What I Did Today
 
