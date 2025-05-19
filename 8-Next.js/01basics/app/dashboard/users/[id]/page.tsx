@@ -1,14 +1,15 @@
-import React from 'react'
-import Link from 'next/link'
+import React from "react";
+import Link from "next/link";
 
-const page = () => {
+const page = ({ params }: { params: { id: String } }) => {
+    const {id} = params;    
   return (
     <div>
-      User Details
+      User Profile {id}
       <br />
       <Link href=".">Go Back</Link>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
