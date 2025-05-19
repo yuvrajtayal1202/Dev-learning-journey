@@ -1,12 +1,14 @@
 import React from "react";
-
-const layout = ({ children }: { children: React.ReactNode }) => {
-  return <div>
-    <h1>
-      NavBar
-    </h1>
-      {children}
-  </div>;
+import "../globals.css";
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <html lang="en">
+      <body>
+        <h1>NavBar</h1>
+        {children}
+      </body>
+    </html>
+  );
 };
 
-export default layout;
+export default Layout;
