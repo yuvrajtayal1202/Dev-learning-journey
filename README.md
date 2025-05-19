@@ -6,19 +6,32 @@ This repo is my public log documenting what I learn daily as I build my frontend
 ---
 
 ## ✅ Completed (Day 75):
-- HTML & CSS 
-- JavaScript 
-- React 
-- React Router + Project Structuring
-- Tailwind CSS & Bootstrap
-- Git & GitHub 
-- Deployment via Vercel & Netlify
+- HTML || CSS || JS
 - TypeScript
-- Node.js & Express.js
+- React(Router, State, Props)
+- Tailwind CSS || Bootstrap
+- Git || GitHub 
+- Vercel || Netlify
+- Node.js || Express.js
+- MongoDB || FireBase
+- Rest APIs, Auth & JWT
 ---
 
 ## 🚀 Currently Learning:
-- Rest APIs, Auth & JWT
+- Next.js
+---
+
+## 🧠 Next to Learn:
+- Nest.js
+- GraphQl
+- Redux
+- PostgreSQL
+- Docker
+- System Degigns
+- GO
+- Shell Scripting
+- Rust 
+- DevOPS
 ---
 
 ## 📅 Daily Logs:
@@ -38,6 +51,7 @@ This repo is my public log documenting what I learn daily as I build my frontend
 | Express.js       | [`Express.js/`](./4-Express.js)              |
 | MongoDB       | [`MongoDB/`](./6-MongoDB)              |
 | JWT(Auth)       | [`JWT(Auth)/`](./7-JWT(Auth))              |
+| Next.js       | [`JWT(Auth)/`](./8-Next.js/)              |
 
 ---
 
