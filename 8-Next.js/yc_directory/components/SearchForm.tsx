@@ -2,7 +2,7 @@ import React from 'react'
 import Form from 'next/form'
 import SearchFormReset from '../components/SearchFormReset'
 import { Search } from 'lucide-react'
-
+     
 
 // const SearchForm = () => {
     // const query = 'Test'    
