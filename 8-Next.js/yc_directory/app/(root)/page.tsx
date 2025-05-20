@@ -25,7 +25,7 @@ title: "We Robots",
 
   return (
     <>
-      <section className="pink_container ">
+      <section className="pink_container pattern">
         <h1 className="heading">
           Pitch Your Startup, <br />
           Connect With Entrepreneurs
