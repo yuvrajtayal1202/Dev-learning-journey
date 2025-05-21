@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const page = () => {
@@ -7,6 +8,10 @@ const page = () => {
 
       Hello World!!
         </h1>
+
+        <Link href={'/blog'}>Bolog</Link>
+        <br />
+        <Link href={'/product'}>products</Link>
     </div>
   )
 }
