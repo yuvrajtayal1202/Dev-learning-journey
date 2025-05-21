@@ -1,6 +1,6 @@
 import React from 'react'
 import Form from 'next/form'
-import SearchFormReset from '../components/SearchFormReset'
+import SearchFormReset from './SearchFormReset'
 import { Search } from 'lucide-react'
      
 
