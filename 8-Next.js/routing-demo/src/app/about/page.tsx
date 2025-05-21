@@ -1,4 +1,9 @@
-import React from 'react'
+import { title } from "process"
+
+export const metadata = {
+  title: "Yuvraj Tayal",
+  description: "by yuvraj"
+}
 
 const page = () => {
   return (
