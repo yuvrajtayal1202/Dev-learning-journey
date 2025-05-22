@@ -6,9 +6,11 @@ const page = async ({params}: {params : Promise<{productId: string, reviewId: st
     if(parseInt(reviewId) >1000){
       notfound()
     }
+    hell
   return (
     <div>
       <h1>Review {reviewId} for Product {productId}</h1>
+
     </div>
   )
 }
