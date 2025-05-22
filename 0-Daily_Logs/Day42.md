@@ -4,7 +4,7 @@
 - Middleware basics in Next.js
 - Image optimization with `next/image`
 - Layouts and custom `App` and `Document`
-- Environment variables in Next.js
+- Environment variables in Next.j   s
 - Deployment overview (Vercel-ready)
 
 ## Final Topics Covered:
