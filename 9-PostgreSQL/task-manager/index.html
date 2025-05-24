@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Manager</title>
+</head>
+<body>
+  <h1>Task Manager</h1>
+  <form id="taskForm">
+    <input type="text" id="title" placeholder="Title" required>
+    <textarea id="description" placeholder="Description"></textarea>
+    <button type="submit">Add Task</button>
+  </form>
+  <div id="taskList"></div>
+
+  <script>
+    // Fetch all tasks
+    async function fetchTasks() {
+      const response = await fetch('http://localhost:3000/tasks');
+      const tasks = await response.json();
+      const taskList = document.getElementById('taskList');
+      taskList.innerHTML = tasks.map(task => `
+        <div>
+          <h3>${task.title}</h3>
+          <p>${task.description}</p>
+          <p>Status: ${task.status}</p>
+        </div>
+      `).join('');
+    }
+
+    // Add a new task
+    document.getElementById('taskForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const title = document.getElementById('title').value;
+      const description = document.getElementById('description').value;
+
+      await fetch('http://localhost:3000/tasks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title, description }),
+      });
+
+      fetchTasks(); // Refresh the list
+    });
+
+    // Initial load
+    fetchTasks();
+  </script>
+</body>
+</html>
