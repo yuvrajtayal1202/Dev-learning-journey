@@ -1,4 +1,4 @@
-# Day 51 – 31 May 2025
+# Day 51 – 30 May 2025
 
 ### 📉 What happened:
 - Started learning **Matplotlib** for data visualization in Python.
